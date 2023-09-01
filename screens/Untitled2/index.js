@@ -11,18 +11,24 @@ const Untitled2 = () => {
     dispatch(democonnector_get_productfeedjson_read());
   }, []);
   return <SafeAreaView style={styles.safeArea}>
-        <ScrollView contentContainerStyle={{
-      backgroundColor: '#f0f0f1',
+      <ScrollView contentContainerStyle={{
+      backgroundColor: "#f0f0f1",
       padding: 10,
-      position: 'relative',
+      position: "relative",
       flex: 1
-    }}><View style={styles.xEhbzBzU}><Text style={styles.YliNzogN}>{"{democonnector_response_get_productfeed[0]} "}</Text></View></ScrollView>
+    }}>
+        <View style={styles.xEhbzBzU}>
+          <Text style={styles.YliNzogN}>
+            {democonnector_response_get_productfeed[0].data[0].sku} 
+          </Text>
+        </View>
+      </ScrollView>
     </SafeAreaView>;
 };
 
 const styles = StyleSheet.create({
   safeArea: {
-    height: '100%'
+    height: "100%"
   },
   xEhbzBzU: {
     height: 60,
