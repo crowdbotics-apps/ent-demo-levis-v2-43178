@@ -1,72 +1,58 @@
-import axios from "axios";
+import axios from "axios"
 const entdemolevisvAPI = axios.create({
   baseURL: "https://ent-demo-levis-v2-43178.botics.co",
-  headers: {
-    Accept: "application/json",
-    "Content-Type": "application/json"
-  }
-});
-
+  headers: { Accept: "application/json", "Content-Type": "application/json" }
+})
 function api_docs_schema_retrieve(payload) {
   return entdemolevisvAPI.get(`/api-docs/schema/`, {
-    params: {
-      lang: payload.lang
-    }
-  });
+    params: { lang: payload.lang }
+  })
 }
-
 function api_v1_login_create(payload) {
-  return entdemolevisvAPI.post(`/api/v1/login/`, payload.data);
+  return entdemolevisvAPI.post(`/api/v1/login/`, payload.data)
 }
-
 function api_v1_signup_create(payload) {
-  return entdemolevisvAPI.post(`/api/v1/signup/`, payload.data);
+  return entdemolevisvAPI.post(`/api/v1/signup/`, payload.data)
 }
-
 function rest_auth_login_create(payload) {
-  return entdemolevisvAPI.post(`/rest-auth/login/`, payload.data);
+  return entdemolevisvAPI.post(`/rest-auth/login/`, payload.data)
 }
-
 function rest_auth_logout_retrieve(payload) {
-  return entdemolevisvAPI.get(`/rest-auth/logout/`);
+  return entdemolevisvAPI.get(`/rest-auth/logout/`)
 }
-
 function rest_auth_logout_create(payload) {
-  return entdemolevisvAPI.post(`/rest-auth/logout/`);
+  return entdemolevisvAPI.post(`/rest-auth/logout/`)
 }
-
 function rest_auth_password_change_create(payload) {
-  return entdemolevisvAPI.post(`/rest-auth/password/change/`, payload.data);
+  return entdemolevisvAPI.post(`/rest-auth/password/change/`, payload.data)
 }
-
 function rest_auth_password_reset_create(payload) {
-  return entdemolevisvAPI.post(`/rest-auth/password/reset/`, payload.data);
+  return entdemolevisvAPI.post(`/rest-auth/password/reset/`, payload.data)
 }
-
 function rest_auth_password_reset_confirm_create(payload) {
-  return entdemolevisvAPI.post(`/rest-auth/password/reset/confirm/`, payload.data);
+  return entdemolevisvAPI.post(
+    `/rest-auth/password/reset/confirm/`,
+    payload.data
+  )
 }
-
 function rest_auth_registration_create(payload) {
-  return entdemolevisvAPI.post(`/rest-auth/registration/`, payload.data);
+  return entdemolevisvAPI.post(`/rest-auth/registration/`, payload.data)
 }
-
 function rest_auth_registration_verify_email_create(payload) {
-  return entdemolevisvAPI.post(`/rest-auth/registration/verify-email/`, payload.data);
+  return entdemolevisvAPI.post(
+    `/rest-auth/registration/verify-email/`,
+    payload.data
+  )
 }
-
 function rest_auth_user_retrieve(payload) {
-  return entdemolevisvAPI.get(`/rest-auth/user/`);
+  return entdemolevisvAPI.get(`/rest-auth/user/`)
 }
-
 function rest_auth_user_update(payload) {
-  return entdemolevisvAPI.put(`/rest-auth/user/`, payload.data);
+  return entdemolevisvAPI.put(`/rest-auth/user/`, payload.data)
 }
-
 function rest_auth_user_partial_update(payload) {
-  return entdemolevisvAPI.patch(`/rest-auth/user/`, payload.data);
+  return entdemolevisvAPI.patch(`/rest-auth/user/`, payload.data)
 }
-
 export const apiService = {
   api_docs_schema_retrieve,
   api_v1_login_create,
@@ -82,4 +68,4 @@ export const apiService = {
   rest_auth_user_retrieve,
   rest_auth_user_update,
   rest_auth_user_partial_update
-};
+}
