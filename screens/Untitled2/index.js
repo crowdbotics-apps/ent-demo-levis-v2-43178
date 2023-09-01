@@ -1,7 +1,14 @@
+import { democonnector_get_productfeedjson_read } from "../../store/demoConnector/democonnector_response_get_productfeeds.slice.js";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import React from "react";
 import { View, StyleSheet, ScrollView, SafeAreaView } from "react-native";
 
 const Untitled2 = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(democonnector_get_productfeedjson_read());
+  }, []);
   return <SafeAreaView style={styles.safeArea}>
         <ScrollView contentContainerStyle={{
       backgroundColor: '#f0f0f1',
